@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <script src="text_substraction.js"></script>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>HELLO JAVA SCRIPT</h1>
+        
+        <!--
+            java script 可寫在 
+            1.<script>
+            2.<a> 
+            3.一般標籤
+            或者
+            另存.js檔並利用
+            <script src="引入您要的.js檔"></script>
+            切記!!!
+            在.js裡不可在函式前加入<script></script>
+        -->   
+        <script type="text/javascript"> 
+            
+            // 比較一下區域變數與全域變數宣告的差異~~
+            var G = 1000; // G:global var
+            D = 2000; // D:global var
+            function sum(a,b){
+                var c = a + b; // c:local var
+                d = 40; // d:global var
+                return c;
+            }
+            
+            /* 
+            變數宣告後，只要把值放進去，它就會自動定義型別。
+            js資料型態:
+            1. number:整數或小數
+            # 整數有三種寫法:
+            o 十進位: 12
+                                    o 八進位: 012
+                                    o 十六進位: x12
+                                    2. string
+            3. boolean: true or false
+            4. undefined
+            5. null
+            */
+           var a, b, c, d;
+            a = 10;
+            b = 20;
+            c = "shit";
+            d = true;
+            document.write("看一下總和為:", sum(a,b),"<br />");
+            document.write("使用 \< br \> 有跳row成功嗎?", "<br />");
+            
+            // 取出id=value_num並利用parseInt or parseFloat轉換型態
+            // 好像vscode環境沒設定好才取不到值喔???
+            var s = parseInt(document.getElementById("price").value);
+            result = a + s;
+            document.write("看一下:", s);
+        </script>
+
+        <p><a href="javascript:window.alert('hi');">你確定是超連結嗎?</a></p>
+        價格:<input type="text" id="price" value="200" name="price"/><br />
+
+        <input type="button" value="10+20等於多少?" onclick="window.alert(sum(10,20));"/><br />
+        
+        <input type="button" value="20減10呢?" onclick="window.alert(substraction(20,10));"/><br />
+
+    </body>
+</html>

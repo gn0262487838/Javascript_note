@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+    </head>
+    <body>
+        <h3>javascript 陣列使用</h3>
+        <script type="text/javascript">
+            // 在js中，陣列內容是可以動態配置
+            var ary = new Array(new Array(1,2,4), new Array(11,22,33,44), new Array(111,222,333));
+            // ary[0] = new Array(1,2,4);
+            // ary[1] = new Array(11,22,33,44);
+            // ary[2] = new Array(111,222,333);
+            document.write("<table border='10' align='center'>");
+            for (var i = 0;i<3;i++){
+                document.write("<tr>");
+                    for (var j = 0;j<4;j++){
+                        document.write("<td>", ary[i][j],"</td>");
+                    }
+                document.write("</tr>");
+            }
+            document.write("</table>");
+        </script>
+
+        <h3>javascript 全域函式</h3>
+        <script type="text/javascript">
+            var str = "var a = 10; var b = 10; document.write(a+b);";
+            document.write("eval可把字串中的資料當作敘述來執行:",eval(str), "<br />");
+            var a = 100;
+            document.write("isNaN如果為真表示此資料非數值資料，反之為數值資料:", isNaN(a), "<br />");
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <mata charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>javascript 運算</h1>
+        <h3>javascript 四則運算</h3>
+        
+        <script type="text/javascript">
+            var a = 10;
+            var b = 20;
+            var c = 1;
+            var d =100;
+      
+            document.write("a + b :", a + b, "<br />");
+            document.write("a - b :", a - b, "<br />");
+            document.write("a * b :", a * b, "<br />");
+            document.write("a / b :", a / b, "<br />");
+            document.write("a % b :", a % b, "<br />");
+        </script>
+        
+        <!--
+            ++ 表示遞增一次
+            -- 表示遞減一次
+            可以觀察一下++前後的變化，會發現計算順序不同喔~
+        -->
+        <h4>++在前</h4>
+        <script>
+            e = ++a + b; // ++a = a+1 = 11 and e = 11 + b = 31 
+            document.write("e:", e, "<br />");
+            document.write("a:", a, "<br />");
+        </script>
+      
+        <h4>++在後</h4>
+        <script>
+            f = a++ + b; // f = a + b = 30 and a++ = a + 1 = 11
+            document.write("f:", f, "<br />");
+            document.write("a:", a, "<br />");
+        </script>
+
+        <h3>javascript 字串運算</h3>
+        <script>
+            var g = "hello";
+            var h = "javascript";
+            document.write(g + h, "<br />"); // javascript
+            // 它無法像python一樣 "字串" * 3 就是重覆三次的意思，在javascript沒有這樣的運算!!!
+            document.write(g * 3, "<br />"); // NaN
+        </script>
+
+        <h3>javascript 比較運算</h3>
+        <script>
+            // 運算子跟python大致相同，唯一差別在javascript多了一個 " === " 表示型值相符 
+            document.write(0 === false); // false，值一樣但是型態不一樣喔!!!
+        </script>
+
+        <h3>javascript 邏輯運算</h3>
+        <script>
+            /*
+            python     : and, or, not
+            javascript :  &&, ||, !
+
+            在python中 &, |, ~ 是位元運算符。
+            */ 
+        </script>
+
+        <h3>javascript 指定運算</h3>
+        <script>
+            // 指定運算分成 單一指定及複合指定，這部分跟python一樣優~
+        </script>
+
+        <h3>javascript 三元運算</h3>
+        <script>
+            // 條件運算式 ? 條件正確的值:條件不正確的值
+            document.write(c > 1 ? "通過":"不通過");
+        </script>
+
+        <h3>javascript 其他運算</h3>
+        <script>
+            // typeof : 可判定資料型態
+            document.write("typeof null :", typeof null, "<br />");
+            document.write("typeof undefined :", typeof undefined, "<br />");
+            document.write("typeof NaN :", typeof NaN, "<br />");
+        </script>
+    </body>
+</html>

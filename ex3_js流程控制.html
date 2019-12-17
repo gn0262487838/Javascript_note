@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+    </head>
+    <body>
+        <h1>javascript </h1>
+        
+        <h3>javascript if用法</h3>
+        <script type="text/javascript">
+            // if概念跟cpp一樣，語法結構一致。
+            var x = 8;
+            if (x > 10){
+                document.write("x大於10喔 <br />");
+                if (x > 50){
+                    document.write("x大於50優 <br />");
+                }
+                else{
+                    document.write("x介在10~50 <br />");
+                }
+            }
+            else if (x < 10 && x > 5){
+                document.write("x介在5~10 <br />");
+            }
+            else{
+                document.write("x小於5");
+            }
+        </script>
+
+        <h3>javascript switch用法</h3>
+        <script>
+            // switch概念跟cpp一樣，語法結構也一致。
+            var y = 3;
+            switch (y){
+                case 1:
+                    document.write("此等級旅遊補助5000元 <br />");
+                    break;
+                case 2:
+                    document.write("此等級旅遊補助3000元 <br />");
+                    break;
+                case 3:
+                    document.write("此等級旅遊補助1000元 <br />");
+                    break;
+                default:
+                    document.write("此等級旅遊補助0元 <br />");
+            }
+        </script>
+
+        <h3>javascript for用法</h3>
+        <script>
+            // for概念跟cpp一樣，語法結構也一致。
+            var memory = 0;
+            for (var z = 1; z <= 10; z++){
+                memory += z;
+            }
+            document.write(memory, "<br />");
+        </script>
+
+        <h3>javascript while用法</h3>
+        <script>
+            // while概念跟cpp一樣，語法結構也一致。
+            var m = 1;
+            while (m <= 10){
+                document.write("hello js <br />");
+                m++;
+            }
+        </script>
+
+        <h3>javascript do while用法</h3>
+        <script>
+            // do while概念跟cpp一樣，語法結構也一致。
+            /*
+            do {
+                先做
+            }while(後測);
+            */
+        </script>
+    </body>
+</html>
