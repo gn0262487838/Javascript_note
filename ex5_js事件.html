@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+        <script>
+            function text(){
+                window.alert("wooooo~~")
+            }
+            function init(){
+                document.getElementsByName("td1")[0].onclick = text;
+            } // 如果不包成func 則chrome在執行時會不認得getElementsByName("td1")[0]，因為它是在後面才出現。
+            window.onload = init; //等chrome全部看完後再初始化一些設定!!!
+            
+            // 原先在日曆上是要每個html td標籤都要加入事件，引用js系統事件即可簡潔程式碼。
+            function init_(){
+                var objs = document.getElementsByTagName("td");
+                for (var i =10;i<objs.length-5;i++){
+                    objs[i].onmouseover = moveover;
+                    objs[i].onmouseout = moveout;
+                }
+            }
+            window.onload = init_;
+        </script>
+    </head>
+    <body>
+        <h3>javascript 滑鼠事件</h3>
+        <script>
+            // 以日曆為概念，移動滑鼠在相應位子會有相應變化
+            function moveover(){
+              obj = window.event.srcElement; //它會記錄哪個物件觸發這個事件。
+              obj.style.color = "blue";
+              obj.style.backgroundColor = "pink";
+            }
+            function moveout(){
+              obj = window.event.srcElement;
+              obj.style.color = "black";
+              obj.style.backgroundColor = "white";
+            }      
+        </script>
+        </script>
+        <table border="10" align="center">
+            <th bgcolor="green">一</th>
+            <th bgcolor="green">二</th>
+            <th bgcolor="green">三</th>
+            <th bgcolor="green">四</th>
+            <th bgcolor="green">五</th>
+            <tr>
+                <td name="td1" onmouseover="moveover()" onmouseout="moveout()">1</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">2</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">3</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">4</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">5</td>
+            </tr>
+            <tr>
+                <td onmouseover="moveover()" onmouseout="moveout()">1</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">2</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">3</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">4</td>
+                <td onmouseover="moveover()" onmouseout="moveout()">5</td>
+            </tr>
+        </table>
+
+        <script>
+            function checkNum(){
+                // onkeydown and onkeyup 抓到是掃描碼?
+                // onkeypress 是抓到按鍵的內碼
+                if (event.keyCode < 48 || event.keyCode > 57){
+                    event.returnValue = false; // 取消此次事件的預設行為
+                }
+            }
+        </script>
+        <h3>javascript 鍵盤事件</h3>
+            薪資:<input type="text" name="salary" onkeypress="checkNum()"/>
+
+
+        <h3>javascript 系統事件</h3>    
+            <!-- 系統初始化例子寫在head上 -->
+            <table border="10" align="center">
+                <th bgcolor="green">一</th>
+                <th bgcolor="green">二</th>
+                <th bgcolor="green">三</th>
+                <th bgcolor="green">四</th>
+                <th bgcolor="green">五</th>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+
+        <h3>javascript 事件傳遞</h3>
+            <!--             
+            window.event.cancelBubble = true 表事件不向上傳遞
+            window.event.cancelBubble = false表事件要向上傳遞，通常預設為false。
+            -->
+            <table border="10" align="center" onmouseover="moveover()" onmouseout="moveout()">
+                <th bgcolor="green">一</th>
+                <th bgcolor="green">二</th>
+                <th bgcolor="green">三</th>
+                <th bgcolor="green">四</th>
+                <th bgcolor="green">五</th>
+                <tr>
+                    <td>1</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                </tr>
+            </table>
+                
+            
+    </body>
+</html>
