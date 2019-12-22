@@ -12,6 +12,7 @@
             } // 如果不包成func 則chrome在執行時會不認得getElementsByName("td1")[0]，因為它是在後面才出現。
             window.onload = init; //等chrome全部看完後再初始化一些設定!!!
             
+            
             // 原先在日曆上是要每個html td標籤都要加入事件，引用js系統事件即可簡潔程式碼。
             function init_(){
                 var objs = document.getElementsByTagName("td");
@@ -110,7 +111,5 @@
                     <td>5</td>
                 </tr>
             </table>
-                
-            
     </body>
 </html>

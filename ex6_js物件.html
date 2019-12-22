@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <script src="script.js"></script>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            window.onload = init;
+        </script>
+
+        <!-- ??? -->
+        <meta name="viewport" content="width=device-width">
+        
+        <title>my name is Jack</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <div>    
+            <!-- <span> 常用在改變一個字句或一串字串的顏色 -->
+            <!-- <marquee> 跑馬燈 -->
+            <marquee><span id="timePanel" style="color:deepPink;font-weight:BOLD;font-size:30px"></span></marquee>
+        </div>
+
+        <h1 style="font-size:48px;color:orangered;" align="center">仁寶的練習網頁</h1>
+        <!-- window.clearInterval(timeid) 終止某樣計時器或週期性任務 -->
+        <input type="button" value="stop" onclick="window.clearInterval(timeId)" style="float: right;width:100px;height:30px;font-size:24px;"/> 
+        <!-- 怎麼restart? -->
+        <input type="button" value="restart" onclick="init()" style="float:right;width:100px;height:30px;font-size:24px;"/>
+        
+        <h3 >查詢書籍</h3>
+        <input type="button" value="查詢" onclick="query()"/>
+        
+        <h3>javascript browser BOM location物件</h3>
+        <script>
+            document.write("href :", window.location.href, "<br/>");
+            document.write("host :", window.location.host, "<br/>");
+            document.write("port :", window.location.port, "<br/>");
+            document.write("hostname :", window.location.hostname, "<br/>");
+            document.write("pathname :", window.location.pathname, "<br/>");
+            document.write("search :", window.location.search, "<br/>");
+        </script>
+
+        <h3>javascript browser BOM navigator物件</h3>
+        <script>
+            document.write("appCodeName :", window.navigator.appCodeName, "<br/>");
+            document.write("appName :", window.navigator.appName, "<br/>");
+            document.write("appVersion :", window.navigator.appVersion, "<br/>");
+            document.write("userAgent :", window.navigator.userAgent, "<br/>");
+            document.write("platform :", window.navigator.platform, "<br/>");
+        </script>
+        <p>
+        <input type="button" value="刷淡" onclick="fading()" /><br />
+        <img src="jake.png" id="jake_1" style="width:300px;height:300px;"/>
+
+        
+    </body>
+</html>

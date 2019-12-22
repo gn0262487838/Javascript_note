@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>  
+    <meta charset="UTF-8"/>
+  </head>
+  <body>
+    <script>  
+      class Person{
+        constructor(name , gender, age, height, weight){
+          this.name = name;
+          this.gender = gender;
+          this.age = age;
+          this.height = height;
+          this.weight = weight;
+        }
+
+        // ES6 規範使用``可換行寫並引用${}以動態填入!!!
+        sayHello(){
+          console.log(`Hi, my name is
+                       ${this.name} !`);
+        }
+      }
+
+      class Person_hobby extends Person{
+        constructor(name, hobby){
+          super(name); // 注意此處是括號歐~可選擇部分繼承來完成初始化
+          this.hobby = hobby || "guitar"; // 用法特別可以注意一下
+        }
+
+        // class裡不用function即可建立函式
+        saySomething(){
+          document.write(`My hobby is play ${this.hobby}, it's so Coo~~l <br />`);
+        }
+      }
+      const Jack = new Person("jack", "male", 28, 173, 65);
+      Jack.sayHello();
+
+      const Jack_hob = new Person_hobby(name = "Jack"); // ES6可在類別裡先預設參數值，以往在js的參數預設值都是undefined!!!
+      Jack_hob.name = "Pink" 
+
+      Jack_hob.aum = 123000; // 可以這種方式新增變數值，但不建議那麼做。因aum本來就不再這個類別裡面~
+      document.write(Jack_hob.aum,"<br />");  
+
+      Jack_hob.saySomething();
+      Jack_hob.sayHello();
+    </script>
+  </body>
+</html>
