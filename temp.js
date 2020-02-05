@@ -44,3 +44,21 @@ function multiCondiNotEmptyFormatter(questions, answers, questionOffset, templat
     console.log('\nnotEmptyFormatter end ===========================');
     return result;
 }
+
+function locationOrientationFormatter(answers, locationIndex, templateString) {
+    console.log(answers);
+    console.log("+++++++++++++++++++++++++++++++++++++");
+    const locations = answers[locationIndex];
+    console.log(locations);
+    // assume orientation is the next one
+    const orientations = answers[locationIndex + 1];
+    console.log(orientations);
+    // assume distances is the next one
+    const distances = answers[locationIndex + 2];
+    console.log(distances);
+    // * assume locations and orientations have same length
+    
+    const result = _.zip(orientations, locations, distances)
+        .map(locationSet => `${locationSet[0]} ${locationSet[1]} ${locationSet[2]} cm`);
+    return _.replace(templateString, '_(location,orientation)', '<i data-focus="loca">' + grammars.joinWordArray(result) + '</i>');
+}
